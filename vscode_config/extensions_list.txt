@@ -1,0 +1,6 @@
+C/C++
+Code Runner
+Python
+Start git-bash
+TODO Highlight
+Vim

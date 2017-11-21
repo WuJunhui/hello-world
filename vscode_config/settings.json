@@ -1,0 +1,13 @@
+// 将设置放入此文件中以覆盖默认设置
+{
+    "vim.disableAnnoyingNeovimMessage": true,
+    "vim.hlsearch": true,
+    "python.pythonPath": "C:\\ProgramData\\Anaconda2\\python.exe",
+    "python.linting.pylintEnabled": true,
+    "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
+    "python.linting.pylintArgs": ["--disable=R,C"],
+
+    "C_Cpp.intelliSenseEngine": "Default",
+    "window.zoomLevel": 0
+}
+
