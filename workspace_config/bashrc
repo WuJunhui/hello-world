@@ -1,0 +1,31 @@
+# .bashrc
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+	. /etc/bashrc
+fi
+
+# Uncomment the following line if you don't like systemctl's auto-paging feature:
+# export SYSTEMD_PAGER=
+
+#cuda 8.0 and cudnn 6 #for tensorflow
+export PATH=/export/home/wjh/cuda-8.0/bin:$PATH
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/export/home/wjh/cuda-8.0/lib64
+# for tensorflow
+export PYTHONPATH=/export/home/wjh/tf-modelsnew/research:/export/home/wjh/tf-modelsnew/research/slim:$PYTHONPATH
+
+alias vi='vim'
+alias matlab='/export/Matlab2016b/bin/matlab'
+alias up='cd ..'
+alias wjh='cd /export/home/wjh' 
+alias lsnu='ls | wc -l' 
+
+# for tmux
+alias tmux='tmux -S /export/home/wjh/tmp/tmuxwjh'
+#alias tmuxini='tmux new -s ini; tmux source-file /export/home/wjh/tmux.conf'
+
+# added by Anaconda2 4.4.0 installer
+export PATH="/export/home/wjh/anaconda2/bin:$PATH"
+
+# set input
+#export INPUTRC=/export/home/wjh/inputrc
