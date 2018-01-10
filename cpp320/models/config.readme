@@ -1,0 +1,7 @@
+path to detection deploy.prototxt
+path to detection caffemodel
+model mean string
+detection interval
+detection threshold
+long edge limit
+

@@ -1,0 +1,8 @@
+models/deploy.prototxt
+models/person0712_iter_180000.caffemodel
+104,117,123
+50
+0.3
+640
+
+
