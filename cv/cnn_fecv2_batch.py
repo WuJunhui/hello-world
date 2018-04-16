@@ -54,7 +54,7 @@ if __name__ == '__main__':
     dataroot='data'
 
     gpu_id = 0
-    dstf=open('out.txt','w')
+    dstf=open('out.txt','a')
 
 
     caffe.set_device(gpu_id)
@@ -66,6 +66,7 @@ if __name__ == '__main__':
         lines = f.readlines()
     img_paths=[]
     labels=[]
+    cnt = 0
     for line in lines:
         line=line.rstrip()
         img_path = dataroot+'/'+line.split()[0]
@@ -73,6 +74,8 @@ if __name__ == '__main__':
         label = line.split()[1]
         labels.append(label)
         if len(img_paths)==batch_size:
+            cnt += batch_size
+            print 'processing', cnt
             cf.forward(img_paths)
             probs = cf.get_blob('prob')
             for i in range(batch_size):
@@ -81,4 +84,11 @@ if __name__ == '__main__':
                 dstf.write(outline+'\n')
             img_paths=[]
             labels=[]
+
+        if cnt + len(img_paths) == len(lines):
+            cf.forward(img_paths)
+            probs = cf.get_blob('prob')
+            for i in range(len(img_paths)):
+                outline = ' '.join([img_paths[i]]+[labels[i]]+[str(x) for x in probs[i]])
+                dstf.write(outline+'\n')
 
